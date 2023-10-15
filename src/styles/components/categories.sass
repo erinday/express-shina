@@ -1,0 +1,41 @@
+.categories
+  margin-top: 48px
+  margin-bottom: 120px
+
+.categories__cont
+  +cont()
+
+.categories__caption
+  position: relative
+  margin-bottom: 12px
+  overflow: hidden
+  padding-bottom: 15px
+  &::before
+    content: ''
+    position: absolute
+    bottom: 0
+    left: -5px
+    right: 0
+    width: 100%
+    height: 5px
+    background-color: $red
+    transform: skew(-30deg, 0)
+
+.categories__list
+  margin: 0 -12px
+
+//.categories__item
+
+.categories__link
+  display: inline-block
+  vertical-align: top
+  padding: 12px
+  +text()
+  color: $red
+  @include hover
+    transition-property: text-decoration-color
+    transition-duration: .2s
+  &:hover
+    @include hover
+      text-decoration-color: transparent
+      transition-duration: .1s
