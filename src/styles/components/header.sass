@@ -1,0 +1,27 @@
+.header
+  background-color: $red
+
+.header__cont
+  +cont()
+  padding-top: 24px
+  padding-bottom: 24px
+
+.header__logo
+  display: block
+  &:not(.header__logo_active)
+    @include hover
+      transition-property: opacity
+      transition-duration: .2s
+    &:hover
+      @include hover
+        opacity: .8
+        transition-duration: .1s
+
+.header__logo_active
+  cursor: default
+
+//.header__logo-picture
+
+.header__logo-image
+  width: 280px
+  height: 70px

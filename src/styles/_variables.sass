@@ -1,7 +1,37 @@
 $black: #000
 $white: #fff
-$dark: #122D44
-$red: #F51731
-$green: #31CA96
-$yellow: #FFB900
-$blue: #2B588A
+$dark: #3c3c3c
+$red: #da2626
+$yellow: #fffe80
+$gray: #ededed
+
+// bp 1366
+@mixin media($bp-size)
+  @media (max-width: $bp-size + px)
+    @content
+
+@mixin media_min($bp-size)
+  @media (min-width: $bp-size + 0.1 + px)
+    @content
+
+@mixin hover
+  @include media_min(1240)
+    @content
+
+@mixin cont ()
+  margin: 0 auto
+  padding-right: 16px
+  padding-left: 16px
+  max-width: 1208px + 32px
+
+@mixin text ($weight: false)
+  font-size: 16px
+  @if ($weight)
+    font-weight: $weight
+  line-height: 20px
+
+@mixin text-small ($weight: false)
+  font-size: 14px
+  @if ($weight)
+    font-weight: $weight
+  line-height: 16px
