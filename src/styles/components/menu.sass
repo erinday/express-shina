@@ -1,0 +1,44 @@
+.menu
+  overflow: hidden
+  background-color: $dark
+
+.menu__cont
+  +cont()
+
+.menu__list
+  display: flex
+  align-items: flex-start
+  margin: 0 -21px
+
+.menu__item
+  position: relative
+  display: inline-block
+  vertical-align: top
+  margin: 0 1px
+  border-bottom: 2px solid transparent
+  padding: 6px 20px 8px
+  +text()
+  color: $white
+  text-decoration: none
+  &:not(.menu__item_active)
+    @include hover
+      transition-property: color
+      transition-duration: .2s
+    &:hover
+      @include hover
+        color: rgba($white, .8)
+        transition-duration: .1s
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    bottom: 0
+    right: -1px
+    width: 2px
+    background-color: rgba($white, .1)
+
+.menu__item_active
+  border-bottom-color: $red
+  cursor: default
+  transition-property: border-color, color
+  transition-duration: .1s

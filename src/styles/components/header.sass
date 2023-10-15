@@ -1,13 +1,14 @@
 .header
+  overflow: hidden
   background-color: $red
 
 .header__cont
   +cont()
-  padding-top: 24px
-  padding-bottom: 24px
 
 .header__logo
   display: block
+  margin-left: -24px
+  padding: 24px
   &:not(.header__logo_active)
     @include hover
       transition-property: opacity
