@@ -14,7 +14,8 @@ export async function getCategoriesForCategoriesPage (): Promise<BaseCategory[]>
   return []
 }
 
-export async function getCategoryAndSubcategoriesForCategoryPage (categorySlug: string) {
+export async function getCategoryAndSubcategoriesForCategoryPage (categorySlug?: string) {
+  if (categorySlug) return
   await timeout()
   const res: { categories: CategoriesForCategoryPage[] } | null = await request.get('/catalog.json')
   if (!res) return null

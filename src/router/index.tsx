@@ -24,6 +24,8 @@ const router = createBrowserRouter([
         path: 'categories/:categorySlug',
         element: <CategoryPage/>,
         loader: categoryLoader
+      }, {
+
       }
     ]
   }
