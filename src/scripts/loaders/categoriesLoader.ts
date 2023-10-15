@@ -1,15 +1,10 @@
 import {
-  CategoriesForCategoryPage,
-  getCategoriesForCategoryPage,
+  CategoriesForCategoriesPage,
+  getCategoriesForCategoriesPage,
 } from '../tools/api.ts'
 
-export async function categoriesLoader () {
-  const categories: CategoriesForCategoryPage[] = await getCategoriesForCategoryPage()
-  if (!categories.length) {
-    throw new Response("", {
-      status: 404,
-      statusText: "Not Found",
-    })
-  }
+export default async function categoriesLoader () {
+  const categories: CategoriesForCategoriesPage[] = await getCategoriesForCategoriesPage()
+  if (!categories.length) throw new Response('', { status: 404, statusText: 'Not Found'})
   return { categories }
 }

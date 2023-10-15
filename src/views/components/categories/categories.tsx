@@ -1,7 +1,7 @@
 import '../../../styles/components/categories.sass'
 import { JSX } from 'react'
 import { Link } from 'react-router-dom'
-import { CategoriesForCategoryPage } from '../../../scripts/tools/api.ts'
+import { CategoriesForCategoriesPage } from '../../../scripts/tools/api.ts'
 
 export default function Categories ({ categories }: PropsCategories ): JSX.Element {
   return (
@@ -9,7 +9,7 @@ export default function Categories ({ categories }: PropsCategories ): JSX.Eleme
       <div className="categories__cont">
         <h1 className="categories__caption">Категории</h1>
         <ul className="categories__list">
-          { categories.map((category: CategoriesForCategoryPage) => (
+          { categories.map((category: CategoriesForCategoriesPage) => (
             <li className="categories__item" key={ category.id }>
               <Link className="categories__link" to={`/categories/${category.slug}`}>{ category.name }</Link>
             </li>
@@ -21,5 +21,5 @@ export default function Categories ({ categories }: PropsCategories ): JSX.Eleme
 }
 
 interface PropsCategories {
-  categories: CategoriesForCategoryPage[]
+  categories: CategoriesForCategoriesPage[]
 }

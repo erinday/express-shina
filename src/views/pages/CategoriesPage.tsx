@@ -1,6 +1,6 @@
 import { JSX } from 'react'
 import { useLoaderData } from 'react-router-dom'
-import { CategoriesForCategoryPage } from '../../scripts/tools/api.ts'
+import { CategoriesForCategoriesPage } from '../../scripts/tools/api.ts'
 import Categories from '../components/categories/categories.tsx'
 
 export default function CategoriesPage (): JSX.Element {
@@ -14,5 +14,5 @@ export default function CategoriesPage (): JSX.Element {
 }
 
 interface LoadDataCategoriesPage {
-  categories: CategoriesForCategoryPage[]
+  categories: CategoriesForCategoriesPage[]
 }
