@@ -7,14 +7,12 @@ export interface BaseCategory {
   index: boolean
 }
 
-export async function getCategoriesForCategoriesPage (): Promise<CategoriesForCategoriesPage[]> {
+export async function getCategoriesForCategoriesPage (): Promise<BaseCategory[]> {
   await timeout()
-  const res: { categories: CategoriesForCategoriesPage[] } | null = await request.get('/catalog.json')
+  const res: { categories: BaseCategory[] } | null = await request.get('/catalog.json')
   if (res) return res.categories
   return []
 }
-
-export interface CategoriesForCategoriesPage extends BaseCategory {}
 
 export async function getCategoryAndSubcategoriesForCategoryPage (categorySlug: string) {
   await timeout()

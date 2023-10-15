@@ -1,0 +1,22 @@
+.categories-back
+  margin-top: 48px
+  & + .categories
+    margin-top: 0
+
+.categories-back__cont
+  +cont()
+
+.categories-back__button
+  display: inline-block
+  vertical-align: top
+  margin-left: -12px
+  padding: 12px
+  +text-small()
+  color: rgba($dark, .6)
+  @include hover
+    transition-property: color
+    transition-duration: .2s
+  &:hover
+    @include hover
+      color: $red
+      transition-duration: .1s

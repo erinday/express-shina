@@ -1,17 +1,18 @@
 import '../../../styles/components/categories.sass'
 import { JSX } from 'react'
 import { Link } from 'react-router-dom'
-import { CategoriesForCategoriesPage } from '../../../scripts/tools/api.ts'
+import { BaseCategory } from '../../../scripts/tools/api.ts'
 
-export default function Categories ({ categories }: PropsCategories ): JSX.Element {
+export default function Categories ({ caption, parentUrl = '', categories }: PropsCategories ): JSX.Element {
+  categories = categories.sort((a, b) => a.name.localeCompare(b.name, 'ru'))
   return (
     <div className="categories">
       <div className="categories__cont">
-        <h1 className="categories__caption">Категории</h1>
+        <h1 className="categories__caption">{caption}</h1>
         <ul className="categories__list">
-          { categories.map((category: CategoriesForCategoriesPage) => (
+          { categories.map((category: BaseCategory) => (
             <li className="categories__item" key={ category.id }>
-              <Link className="categories__link" to={`/categories/${category.slug}`}>{ category.name }</Link>
+              <Link className="categories__link" to={`/categories${parentUrl}/${category.slug}`}>{ category.name }</Link>
             </li>
           ))}
         </ul>
@@ -21,5 +22,9 @@ export default function Categories ({ categories }: PropsCategories ): JSX.Eleme
 }
 
 interface PropsCategories {
-  categories: CategoriesForCategoriesPage[]
+  caption: string
+  parentUrl?: string
+  categories: [
+    BaseCategory
+  ]
 }
