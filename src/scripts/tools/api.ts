@@ -1,7 +1,7 @@
 import request from './request.ts'
 
 export async function getCategoriesForCategoriesPage (): Promise<CategoryInterface[]> {
-  await timeout()
+  await timeout(400)
   const res: ResponseInterface | null = await request.get('/catalog.json')
   if (res) return res.categories
   return []
@@ -9,7 +9,7 @@ export async function getCategoriesForCategoriesPage (): Promise<CategoryInterfa
 
 export async function getCategoryForCategoryPage (categorySlug?: string): Promise<CategoryInterface|undefined> {
   if (!categorySlug) return
-  await timeout(500)
+  await timeout(700)
   const res: ResponseInterface | null = await request.get('/catalog.json')
   if (!res) return
   const category = res.categories.find((item: CategoryInterface) => {

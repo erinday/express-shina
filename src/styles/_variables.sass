@@ -30,6 +30,12 @@ $gray: #ededed
     font-weight: $weight
   line-height: 44px
 
+@mixin text-big ($weight: false)
+  font-size: 24px
+  @if ($weight)
+    font-weight: $weight
+  line-height: 28px
+
 @mixin text ($weight: false)
   font-size: 16px
   @if ($weight)
