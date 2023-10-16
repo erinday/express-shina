@@ -2,11 +2,11 @@ import { JSX } from 'react'
 import { Link } from 'react-router-dom'
 import '../../../styles/components/categories-back.sass'
 
-export default function CategoriesBack ({ url }: PropsCategoriesBack): JSX.Element {
+export default function CategoriesBack ({ url, linkText = 'Назад' }: PropsCategoriesBack): JSX.Element {
   return (
     <div className="categories-back">
       <div className="categories-back__cont">
-        <Link className="categories-back__button" to={url}>← Назад</Link>
+        <Link className="categories-back__button" to={url}>← { linkText }</Link>
       </div>
     </div>
   )
@@ -14,4 +14,5 @@ export default function CategoriesBack ({ url }: PropsCategoriesBack): JSX.Eleme
 
 interface PropsCategoriesBack {
   url: string
+  linkText?: string
 }

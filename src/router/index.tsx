@@ -6,6 +6,8 @@ import CategoriesPage from '../views/pages/CategoriesPage.tsx'
 import CategoryPage from '../views/pages/CategoryPage.tsx'
 import categoriesLoader from '../scripts/loaders/categoriesLoader.ts'
 import categoryLoader from '../scripts/loaders/categoryLoader.ts'
+import secondCategoryLoader from '../scripts/loaders/secondCategoryLoader.ts'
+import SecondCategoryPage from '../views/pages/SecondCategoryPage.tsx'
 
 const router = createBrowserRouter([
   {
@@ -25,7 +27,9 @@ const router = createBrowserRouter([
         element: <CategoryPage/>,
         loader: categoryLoader
       }, {
-
+        path: 'categories/:categorySlug/:secondCategorySlug',
+        element: <SecondCategoryPage/>,
+        loader: secondCategoryLoader
       }
     ]
   }
