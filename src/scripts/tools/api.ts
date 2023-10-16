@@ -27,7 +27,7 @@ export async function getDataForSecondCategoryPage (categorySlug?: string, secon
     if (item.slug === categorySlug) return item
   })
   if (!category) return
-  const secondCategory = category.children.find((item) => {
+  const secondCategory = category.children.find(item => {
     if (item.slug === secondCategorySlug) return item
   })
   if (!secondCategory) return
@@ -40,6 +40,36 @@ export async function getDataForSecondCategoryPage (categorySlug?: string, secon
 interface ResponseGetDataForSecondCategoryPage {
   category: CategoryInterface
   secondCategory: SecondCategoryInterface
+}
+
+export async function getDataThirdCategoryPage (categorySlug?: string, secondCategorySlug?: string, thirdCategorySlug?: string): Promise<ResponseGetDataForThirdCategoryPage|undefined> {
+  if (!categorySlug || !secondCategorySlug || !thirdCategorySlug) return
+  await timeout(500)
+  const res: ResponseInterface | null = await request.get('/catalog.json')
+  if (!res) return
+  const category = res.categories.find((item) => {
+    if (item.slug === categorySlug) return item
+  })
+  if (!category) return
+  const secondCategory = category.children.find(item => {
+    if (item.slug === secondCategorySlug) return item
+  })
+  if (!secondCategory) return
+  const thirdCategory = secondCategory.children.find(item => {
+    if (item.slug === thirdCategorySlug) return item
+  })
+  if (!thirdCategory) return
+  return {
+    category,
+    secondCategory,
+    thirdCategory
+  }
+}
+
+interface ResponseGetDataForThirdCategoryPage {
+  category: CategoryInterface
+  secondCategory: SecondCategoryInterface
+  thirdCategory: ThirdCategoryInterface
 }
 
 interface ResponseInterface {
