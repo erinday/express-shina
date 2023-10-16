@@ -6,7 +6,7 @@ export default function Footer (): JSX.Element {
   return (
     <div className="footer">
       <div className="footer__cont">
-        <span className="footer__note">© 2006-{date.getFullYear()}, Интернет-магазин Express-Шина</span>
+        <span className="footer__note">© 2006-{ date.getFullYear() }, Интернет-магазин Express-Шина</span>
       </div>
     </div>
   )

@@ -1,6 +1,6 @@
+import '../../../styles/components/categories-back.sass'
 import { JSX } from 'react'
 import { Link } from 'react-router-dom'
-import '../../../styles/components/categories-back.sass'
 
 export default function CategoriesBack ({ url, linkText = 'Назад' }: PropsCategoriesBack): JSX.Element {
   return (

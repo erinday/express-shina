@@ -1,12 +1,9 @@
 import { JSX } from 'react'
 import { useLoaderData } from 'react-router-dom'
-import {
-  CategoryInterface,
-  SecondCategoryInterface,
-} from '../../scripts/tools/api.ts'
+import { CategoryInterface, SecondCategoryInterface } from '../../scripts/tools/api.ts'
+import setHeadMeta from '../../scripts/tools/setHeadMeta.ts'
 import CategoriesBack from '../components/categories/categories-back.tsx'
 import Categories from '../components/categories/categories.tsx'
-import setHeadMeta from '../../scripts/tools/setHeadMeta.ts'
 
 export default function SecondCategoryPage (): JSX.Element {
   const { category, secondCategory } = useLoaderData() as LoadDataSecondCategoryPage

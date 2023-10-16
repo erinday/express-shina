@@ -1,4 +1,4 @@
-import { LoaderFunctionArgs } from '@remix-run/router/utils.ts'
+import { LoaderFunctionArgs } from 'react-router-dom'
 import { getDataThirdCategoryPage } from '../tools/api.ts'
 
 export default async function thirdCategoryLoader ({ params }: LoaderFunctionArgs) {

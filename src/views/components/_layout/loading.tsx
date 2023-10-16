@@ -1,6 +1,6 @@
+import '../../../styles/components/loading.sass'
 import { JSX } from 'react'
 import { useNavigation, Navigation } from "react-router-dom"
-import '../../../styles/components/loading.sass'
 
 export default function Loading (): JSX.Element {
   const navigation: Navigation = useNavigation()

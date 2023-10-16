@@ -1,5 +1,5 @@
-import { LoaderFunctionArgs } from '@remix-run/router/utils.ts'
 import { CategoryInterface, getCategoryForCategoryPage } from '../tools/api.ts'
+import { LoaderFunctionArgs } from 'react-router-dom'
 
 export default async function ({ params }: LoaderFunctionArgs) {
   const category: CategoryInterface | undefined = await getCategoryForCategoryPage(params.categorySlug)

@@ -1,5 +1,5 @@
-import { JSX } from 'react'
 import '../../../styles/components/home.sass'
+import { JSX } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Home (): JSX.Element {

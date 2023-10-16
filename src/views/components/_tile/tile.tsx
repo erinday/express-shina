@@ -1,5 +1,5 @@
-import { JSX } from 'react'
 import '../../../styles/components/tile.sass'
+import { JSX } from 'react'
 
 export default function Tile ({ caption }: PropsTile): JSX.Element {
   const tiles = []

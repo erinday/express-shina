@@ -1,12 +1,9 @@
 import { JSX } from 'react'
-import {
-  CategoryInterface, SecondCategoryInterface,
-  ThirdCategoryInterface,
-} from '../../scripts/tools/api.ts'
-import CategoriesBack from '../components/categories/categories-back.tsx'
 import { useLoaderData } from 'react-router-dom'
-import Tile from '../components/_tile/tile.tsx'
+import { CategoryInterface, SecondCategoryInterface, ThirdCategoryInterface } from '../../scripts/tools/api.ts'
 import setHeadMeta from '../../scripts/tools/setHeadMeta.ts'
+import CategoriesBack from '../components/categories/categories-back.tsx'
+import Tile from '../components/_tile/tile.tsx'
 
 export default function ThirdCategoryPage (): JSX.Element {
   const { category, secondCategory, thirdCategory } = useLoaderData() as LoadDataThirdCategoryPage

@@ -1,6 +1,6 @@
+import '../../../styles/components/header.sass'
 import { JSX } from 'react'
 import { NavLink } from 'react-router-dom'
-import '../../../styles/components/header.sass'
 
 export default function Header (): JSX.Element {
   return (

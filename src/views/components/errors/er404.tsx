@@ -1,6 +1,6 @@
+import '../../../styles/components/er404.sass'
 import { JSX } from 'react'
 import { Link } from 'react-router-dom'
-import '../../../styles/components/er404.sass'
 
 export default function Er404 (): JSX.Element {
   return (

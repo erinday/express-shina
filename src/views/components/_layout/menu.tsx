@@ -1,6 +1,6 @@
+import '../../../styles/components/menu.sass'
 import { JSX } from 'react'
 import { NavLink } from 'react-router-dom'
-import '../../../styles/components/menu.sass'
 
 export default function Menu (): JSX.Element {
   return (
