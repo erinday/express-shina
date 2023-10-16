@@ -6,9 +6,11 @@ import {
 } from '../../scripts/tools/api.ts'
 import CategoriesBack from '../components/categories/categories-back.tsx'
 import Categories from '../components/categories/categories.tsx'
+import setHeadMeta from '../../scripts/tools/setHeadMeta.ts'
 
 export default function SecondCategoryPage (): JSX.Element {
   const { category, secondCategory } = useLoaderData() as LoadDataSecondCategoryPage
+  setHeadMeta(secondCategory.name)
   return (
     <>
       <CategoriesBack url={`/categories/${category.slug}`} linkText={category.name}/>
