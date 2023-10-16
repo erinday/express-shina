@@ -10,7 +10,7 @@ import setHeadMeta from '../../scripts/tools/setHeadMeta.ts'
 
 export default function ThirdCategoryPage (): JSX.Element {
   const { category, secondCategory, thirdCategory } = useLoaderData() as LoadDataThirdCategoryPage
-  setHeadMeta(thirdCategory.name)
+  setHeadMeta(thirdCategory.name, thirdCategory.index)
   return (
     <>
       <CategoriesBack url={`/categories/${category.slug}/${secondCategory.slug}`} linkText={secondCategory.name}/>

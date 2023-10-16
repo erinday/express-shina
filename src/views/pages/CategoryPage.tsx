@@ -7,7 +7,7 @@ import setHeadMeta from '../../scripts/tools/setHeadMeta.ts'
 
 export default function CategoryPage (): JSX.Element {
   const { category } = useLoaderData() as LoadDataCategoryPage
-  setHeadMeta(category.name)
+  setHeadMeta(category.name, category.index)
   return (
     <>
       <CategoriesBack url='/categories' linkText="Все категории"/>
